@@ -1,0 +1,73 @@
+html:has(#theme-toggle:checked) {
+ --base-color: blue;
+  --font-family-primary: 'google sans', sans-serif;
+  --font-family-secondary: 'Times New Roman', serif;
+  --box-border: 1px solid black;
+  --box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.7);
+  --box-border-radius: 5px;
+}
+
+
+:root {
+  --base-color: red;
+  --font-family-primary: 'Arial Black', sans-serif;
+  --font-family-secondary: 'Comic Sans MS', cursive, sans-serif;
+  --box-border: 1px solid black;
+  --box-shadow: -10px 5px 5px rgba(0, 0, 0, 0.7);
+  --box-border-radius: 0;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  flex-direction: column;
+}
+
+.text-1 {
+  font-family: var(--font-family-primary);
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.text-2 {
+  font-family: var(--font-family-secondary);
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.box-with-shadow {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--box-border);
+  border-radius: var(--box-border-radius);
+}
+
+.box-1, .box-2, .box-3 {
+  width: 150px;
+  height: 150px;
+  background-color: var(--base-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: var(--box-border-radius);
+}
+
+.box-2 {
+  filter: brightness(2.2); 
+}
+
+.box-3 {
+  filter: brightness(0.3);
+}

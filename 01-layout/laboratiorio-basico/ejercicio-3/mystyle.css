@@ -1,0 +1,31 @@
+:root {
+  --base-color: orange;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+}
+
+.box {
+  width: 150px;
+  height: 45px;
+  background-color: var(--base-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--box-border-radius);
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }

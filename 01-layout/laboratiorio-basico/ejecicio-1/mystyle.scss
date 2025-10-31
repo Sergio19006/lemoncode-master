@@ -1,0 +1,59 @@
+@use 'sass:color';
+
+body {
+  background-color: aquamarine;
+}
+
+@mixin color-palette($base-color, $levels) {
+  .box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+
+  @for $i from 1 through $levels {
+    .darken-#{$i} {
+      background-color: color.adjust($base-color, $lightness: $i * -5%);
+      .color-box-text {
+        font-size: 14px;
+        color: color.mix(black, white, $weight: $i * 5%);
+      }
+    }
+    .lighten-#{$i} {
+      background-color: color.adjust($base-color, $lightness: $i * 5%);
+      .color-box-text {
+        font-size: 14px;
+        color: color.mix(white, black, $weight: $i * 5%);
+      }
+    }
+  }
+
+  .base-color {
+    background-color: $base-color;
+    width: 150px;
+  }
+}
+
+.container-1 {
+  @include color-palette(blue, 4); 
+}
+
+.container-2 {
+  @include color-palette(red, 4);
+}
+
+.container-3 {
+  @include color-palette(green, 4);
+}
+
+.container-1, .container-2, .container-3 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
