@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.scss";
-import logo from "./logo.png";
+import logo from "./logo.svg";
 
 const App: React.FC = () => {
   return (

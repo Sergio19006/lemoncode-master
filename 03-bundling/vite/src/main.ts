@@ -6,6 +6,14 @@ console.log("API URL:", import.meta.env.VITE_API_URL);
 const app = document.querySelector<HTMLDivElement>("#app");
 
 if (app) {
+  const logo = document.createElement("img");
+  logo.src = "/logo.svg";
+  logo.alt = "Lemoncode Logo";
+  logo.style.width = "200px";
+  logo.style.display = "block";
+  logo.style.margin = "20px auto";
+  app.appendChild(logo);
+
   const h1 = document.createElement("h1");
   h1.classList.add(classes.title);
   h1.textContent = "Vite con TypeScript";
